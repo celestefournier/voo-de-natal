@@ -359,7 +359,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.017745972, y: -0.14409494}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -370,7 +370,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.1, y: 2.0059571}
+  m_Size: {x: 3.3731575, y: 1.5256119}
   m_EdgeRadius: 0
 --- !u!50 &368648343
 Rigidbody2D:
@@ -1152,6 +1152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2079816149}
   - component: {fileID: 2079816150}
+  - component: {fileID: 2079816151}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -1186,3 +1187,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bird: {fileID: 1331093249511967235, guid: 0a61999d62d52ce4cb3f3769cd563ae3, type: 3}
+--- !u!114 &2079816151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079816148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f400ecd3fa95af4286268d2082d8380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 1038515449252400729, guid: 3f90406e75db41e4094d13a0fa553886, type: 3}
+  - {fileID: 4420394730528021819, guid: d7f8b2b7ad48e99498ae1ea955237f45, type: 3}
+  - {fileID: 2722040820665851774, guid: 722209b9746ae9348b08aaaec9b58a69, type: 3}
+  star: {fileID: 7124178149116260304, guid: eddc59945c71f5b47b1fc6062227994b, type: 3}
