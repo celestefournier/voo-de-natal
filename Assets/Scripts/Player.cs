@@ -3,6 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     float speed = 3;
+    public GameController gameController;
 
     void Update()
     {
@@ -22,6 +23,14 @@ public class Player : MonoBehaviour
         else
         {
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Enemy")
+        {
+            gameController.Lose();
         }
     }
 }
