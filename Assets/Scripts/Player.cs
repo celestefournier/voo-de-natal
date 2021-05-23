@@ -4,6 +4,8 @@ public class Player : MonoBehaviour
 {
     float speed = 3;
     public GameController gameController;
+    public CollectablesManager collectablesManager;
+    public GameObject itemEffect;
 
     void Update()
     {
@@ -31,6 +33,12 @@ public class Player : MonoBehaviour
         if (other.tag == "Enemy")
         {
             gameController.Lose();
+        }
+        else if (other.tag == "Item")
+        {
+            Instantiate(itemEffect, other.transform.position, Quaternion.identity);
+            collectablesManager.PickItem(other.name);
+            Destroy(other.gameObject);
         }
     }
 }
