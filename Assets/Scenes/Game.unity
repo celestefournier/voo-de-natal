@@ -487,6 +487,7 @@ MonoBehaviour:
   gameController: {fileID: 2039698279}
   collectablesManager: {fileID: 832603002}
   itemEffect: {fileID: 8548456265221567307, guid: 497ec5e15dad5a346ab1059ff596175f, type: 3}
+  collisionEffect: {fileID: 2832504396692781885, guid: 173d2a78f2a5ab748bad0ec26ea041c6, type: 3}
 --- !u!1 &410371357
 GameObject:
   m_ObjectHideFlags: 0
