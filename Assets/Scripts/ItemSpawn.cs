@@ -24,7 +24,7 @@ public class ItemSpawn : MonoBehaviour
             }
         }
 
-        StartCoroutine(WaitForInstantiate(star, 1f));
+        StartCoroutine(WaitForInstantiate(star, 60f));
     }
 
     IEnumerator WaitForInstantiate(GameObject prefab, float timeToSpawn)

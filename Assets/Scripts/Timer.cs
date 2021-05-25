@@ -12,6 +12,10 @@ public class Timer : MonoBehaviour
     void Start()
     {
         clock = GetComponent<Text>();
+    }
+
+    public void StartTimer()
+    {
         StartCoroutine("TimeLoop");
     }
 
