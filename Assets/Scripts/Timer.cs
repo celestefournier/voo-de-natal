@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
     public float time = 60;
 
     Text clock;
+    IEnumerator timeLoopController;
 
     void Start()
     {
@@ -16,7 +17,20 @@ public class Timer : MonoBehaviour
 
     public void StartTimer()
     {
-        StartCoroutine("TimeLoop");
+        timeLoopController = TimeLoop();
+        StartCoroutine(timeLoopController);
+    }
+
+    public void Stop()
+    {
+        clock.text = "60";
+        StopCoroutine(timeLoopController);
+    }
+
+    public void Restart()
+    {
+        time = 60;
+        StartTimer();
     }
 
     IEnumerator TimeLoop()

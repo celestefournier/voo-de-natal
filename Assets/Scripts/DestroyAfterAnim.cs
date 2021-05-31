@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class DestroyAfterAnim : StateMachineBehaviour
+public class DestroyAfterAnim : MonoBehaviour
 {
-    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    public void Destroy()
     {
-        Destroy(animator.gameObject, stateInfo.length);
+        Destroy(gameObject);
     }
 }

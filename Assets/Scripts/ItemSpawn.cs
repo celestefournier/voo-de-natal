@@ -32,7 +32,7 @@ public class ItemSpawn : MonoBehaviour
         yield return new WaitForSeconds(timeToSpawn);
 
         Vector3 position = Vector3.up * Random.Range(-4f, 4f) + transform.position;
-        GameObject item = Instantiate(prefab, position, Quaternion.identity);
+        GameObject item = Instantiate(prefab, position, Quaternion.identity, transform);
         item.name = prefab.name;
     }
 }

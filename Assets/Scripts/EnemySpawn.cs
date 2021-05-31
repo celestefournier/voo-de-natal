@@ -21,7 +21,7 @@ public class EnemySpawn : MonoBehaviour
             if (sholdSpawn)
             {
                 Vector3 position = Vector3.up * Random.Range(-4f, 4f) + transform.position;
-                Instantiate(bird, position, Quaternion.identity);
+                Instantiate(bird, position, Quaternion.identity, transform);
             }
 
             yield return new WaitForSeconds(1);

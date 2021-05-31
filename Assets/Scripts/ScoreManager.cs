@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CollectablesManager : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
     public Text candy, bell, ornament, star;
 
-    int candyScore, bellScore, ornamentScore, starScore;
+    [HideInInspector]
+    public int candyScore, bellScore, ornamentScore, starScore;
 
     public void PickItem(string name)
     {
@@ -29,5 +30,18 @@ public class CollectablesManager : MonoBehaviour
             starScore++;
             star.text = $"{starScore}/1";
         }
+    }
+
+    public void Restart()
+    {
+        candyScore = 0;
+        bellScore = 0;
+        ornamentScore = 0;
+        starScore = 0;
+
+        candy.text = $"{candyScore}/3";
+        bell.text = $"{bellScore}/3";
+        ornament.text = $"{ornamentScore}/3";
+        star.text = $"{starScore}/1";
     }
 }

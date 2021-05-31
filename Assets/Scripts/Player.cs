@@ -1,11 +1,10 @@
-using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     float speed = 3;
     public GameController gameController;
-    public CollectablesManager collectablesManager;
+    public ScoreManager collectablesManager;
     public GameObject itemEffect;
     public GameObject collisionEffect;
 
@@ -36,7 +35,7 @@ public class Player : MonoBehaviour
         {
             Instantiate(collisionEffect, other.transform.position, Quaternion.identity);
             Destroy(other.gameObject);
-            StartCoroutine("WaitForGameOver");
+            gameController.Lose();
         }
         else if (other.tag == "Item")
         {
@@ -44,11 +43,5 @@ public class Player : MonoBehaviour
             collectablesManager.PickItem(other.name);
             Destroy(other.gameObject);
         }
-    }
-
-    IEnumerator WaitForGameOver()
-    {
-        yield return new WaitForSeconds(0.5f);
-        gameController.Lose();
     }
 }
