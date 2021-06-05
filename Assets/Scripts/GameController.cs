@@ -60,7 +60,7 @@ public class GameController : MonoBehaviour
         gameCanvas.DOFade(1, 0.2f).SetEase(Ease.Linear).SetDelay(1.5f).OnComplete(() =>
         {
             timer.Restart();
-            SpawnPoint.SetActive(true);
+            SpawnPoint.GetComponent<ItemSpawn>().Restart();
         });
     }
 }

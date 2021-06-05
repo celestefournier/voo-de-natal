@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ItemSpawn : MonoBehaviour
@@ -7,6 +9,7 @@ public class ItemSpawn : MonoBehaviour
     public GameObject star;
 
     bool gameOver;
+    List<IEnumerator> instantiateController = new List<IEnumerator>();
 
     void Start()
     {
@@ -20,11 +23,13 @@ public class ItemSpawn : MonoBehaviour
             for (int i = 0; i < 3; i++)
             {
                 float timeToSpawn = Random.Range(0f, 60f);
-                StartCoroutine(WaitForInstantiate(item, timeToSpawn));
+                instantiateController.Add(WaitForInstantiate(item, timeToSpawn));
+                StartCoroutine(instantiateController.Last());
             }
         }
 
-        StartCoroutine(WaitForInstantiate(star, 60f));
+        instantiateController.Add(WaitForInstantiate(star, 60f));
+        StartCoroutine(instantiateController.Last());
     }
 
     IEnumerator WaitForInstantiate(GameObject prefab, float timeToSpawn)
@@ -34,5 +39,14 @@ public class ItemSpawn : MonoBehaviour
         Vector3 position = Vector3.up * Random.Range(-4f, 4f) + transform.position;
         GameObject item = Instantiate(prefab, position, Quaternion.identity, transform);
         item.name = prefab.name;
+    }
+
+    public void Restart()
+    {
+        foreach (IEnumerator instantiate in instantiateController)
+        {
+            StopCoroutine(instantiate);
+        }
+        Start();
     }
 }
