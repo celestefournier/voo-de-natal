@@ -5,11 +5,13 @@ public class EnemySpawn : MonoBehaviour
 {
     public GameObject bird;
 
+    IEnumerator instantiateController;
     bool gameOver;
 
-    void Start()
+    public void Start()
     {
-        StartCoroutine("SpawnLoop");
+        instantiateController = SpawnLoop();
+        StartCoroutine(instantiateController);
     }
 
     IEnumerator SpawnLoop()
@@ -26,5 +28,10 @@ public class EnemySpawn : MonoBehaviour
 
             yield return new WaitForSeconds(1);
         }
+    }
+
+    public void Stop()
+    {
+        StopCoroutine(instantiateController);
     }
 }

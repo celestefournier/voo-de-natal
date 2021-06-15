@@ -22,13 +22,13 @@ public class ItemSpawn : MonoBehaviour
         {
             for (int i = 0; i < 3; i++)
             {
-                float timeToSpawn = Random.Range(0f, 60f);
+                float timeToSpawn = Random.Range(0f, 45f);
                 instantiateController.Add(WaitForInstantiate(item, timeToSpawn));
                 StartCoroutine(instantiateController.Last());
             }
         }
 
-        instantiateController.Add(WaitForInstantiate(star, 60f));
+        instantiateController.Add(WaitForInstantiate(star, 45f));
         StartCoroutine(instantiateController.Last());
     }
 

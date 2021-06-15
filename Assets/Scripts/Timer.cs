@@ -1,11 +1,14 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
     [HideInInspector]
-    public float time = 60;
+    public int time = 50;
+    [HideInInspector]
+    public UnityEvent<int> onChangeTime;
 
     Text clock;
     IEnumerator timeLoopController;
@@ -23,13 +26,13 @@ public class Timer : MonoBehaviour
 
     public void Stop()
     {
-        clock.text = "60";
+        clock.text = "50";
         StopCoroutine(timeLoopController);
     }
 
     public void Restart()
     {
-        time = 60;
+        time = 50;
         StartTimer();
     }
 
@@ -40,6 +43,7 @@ public class Timer : MonoBehaviour
             yield return new WaitForSeconds(1);
             time--;
             clock.text = time.ToString();
+            onChangeTime.Invoke(time);
         }
     }
 }

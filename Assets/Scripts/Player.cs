@@ -17,15 +17,15 @@ public class Player : MonoBehaviour
     {
         if (Input.GetAxis("Vertical") > 0 && transform.position.y < 3.5f)
         {
-            GetComponent<Rigidbody2D>().velocity = Vector2.up * Input.GetAxis("Vertical") * speed;
+            GetComponent<Rigidbody2D>().velocity = Vector3.up * Input.GetAxis("Vertical") * speed;
         }
         else if (Input.GetAxis("Vertical") < 0 && transform.position.y > -3.3f)
         {
-            GetComponent<Rigidbody2D>().velocity = Vector2.up * Input.GetAxis("Vertical") * speed;
+            GetComponent<Rigidbody2D>().velocity = Vector3.up * Input.GetAxis("Vertical") * speed;
         }
         else
         {
-            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         }
     }
 
