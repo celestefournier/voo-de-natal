@@ -4,14 +4,14 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     public GameObject bird;
+    public Timer timer;
 
-    IEnumerator instantiateController;
     bool gameOver;
 
     public void Start()
     {
-        instantiateController = SpawnLoop();
-        StartCoroutine(instantiateController);
+        StartCoroutine("SpawnLoop");
+        timer.onChangeTime.AddListener(IsGameOver);
     }
 
     IEnumerator SpawnLoop()
@@ -30,8 +30,8 @@ public class EnemySpawn : MonoBehaviour
         }
     }
 
-    public void Stop()
+    void IsGameOver(int time)
     {
-        StopCoroutine(instantiateController);
+        if (time < 5) gameOver = true;
     }
 }

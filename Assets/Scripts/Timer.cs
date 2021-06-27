@@ -6,34 +6,23 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     [HideInInspector]
-    public int time = 50;
+    public int time;
     [HideInInspector]
     public UnityEvent<int> onChangeTime;
 
     Text clock;
-    IEnumerator timeLoopController;
+    SceneManager sceneManager;
 
     void Start()
     {
         clock = GetComponent<Text>();
-    }
-
-    public void StartTimer()
-    {
-        timeLoopController = TimeLoop();
-        StartCoroutine(timeLoopController);
-    }
-
-    public void Stop()
-    {
-        clock.text = "50";
-        StopCoroutine(timeLoopController);
-    }
-
-    public void Restart()
-    {
         time = 50;
-        StartTimer();
+        sceneManager = GameObject.Find("Scene Manager").GetComponent<SceneManager>();
+    }
+
+    public void TimerStart()
+    {
+        StartCoroutine("TimeLoop");
     }
 
     IEnumerator TimeLoop()
@@ -44,6 +33,11 @@ public class Timer : MonoBehaviour
             time--;
             clock.text = time.ToString();
             onChangeTime.Invoke(time);
+
+            if (time == 0)
+            {
+                sceneManager.Finish();
+            }
         }
     }
 }

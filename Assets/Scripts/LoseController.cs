@@ -3,16 +3,14 @@ using UnityEngine.UI;
 
 public class LoseController : MonoBehaviour
 {
-    public ScoreManager scoreManager;
-    public Timer timer;
-    public Text time, candy, bell, ornament, star;
+    public Text timer, candy, bell, ornament, star;
 
-    void OnEnable()
+    public void Open(int time, int candies, int bells, int ornaments, int stars)
     {
-        time.text = timer.time.ToString();
-        candy.text = scoreManager.candy.text;
-        bell.text = scoreManager.bell.text;
-        ornament.text = scoreManager.ornament.text;
-        star.text = scoreManager.star.text;
+        timer.text = time.ToString();
+        candy.text = $"{candies}/3";
+        bell.text = $"{bells}/3";
+        ornament.text = $"{ornaments}/3";
+        star.text = $"{stars}/1";
     }
 }

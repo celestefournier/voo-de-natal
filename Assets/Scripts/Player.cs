@@ -1,12 +1,21 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     float speed = 3;
-    public GameController gameController;
     public ScoreManager collectablesManager;
+    public Timer timer;
     public GameObject itemEffect;
     public GameObject collisionEffect;
+
+    SceneManager sceneManager;
+
+    void Start()
+    {
+        transform.DOMoveX(-11, 2).From().SetEase(Ease.OutQuint).SetDelay(0.3f);
+        sceneManager = GameObject.Find("Scene Manager").GetComponent<SceneManager>();
+    }
 
     void Update()
     {
@@ -35,7 +44,13 @@ public class Player : MonoBehaviour
         {
             Instantiate(collisionEffect, other.transform.position, Quaternion.identity);
             Destroy(other.gameObject);
-            gameController.Lose();
+            sceneManager.Lose(
+                timer.time,
+                collectablesManager.candyScore,
+                collectablesManager.bellScore,
+                collectablesManager.ornamentScore,
+                collectablesManager.starScore
+            );
         }
         else if (other.tag == "Item")
         {

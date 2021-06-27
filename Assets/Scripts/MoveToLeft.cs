@@ -3,19 +3,21 @@ using UnityEngine;
 public class MoveToLeft : MonoBehaviour
 {
     public float speed = 4;
-    GameController gameController;
+    float gameSpeed;
 
     void Start()
     {
-        gameController = GameObject.Find("Game Controller").GetComponent<GameController>();
+        gameSpeed = FindObjectOfType<BackgroundController>().speed;
     }
 
     void Update()
     {
-        transform.Translate(Vector2.left * speed * gameController.cameraVelocity * Time.deltaTime);
+        print(gameSpeed);
+        transform.Translate(Vector2.left * speed * gameSpeed * Time.deltaTime);
     }
 
-    void OnBecameInvisible() {
+    void OnBecameInvisible()
+    {
         Destroy(gameObject);
     }
 }

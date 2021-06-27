@@ -5,15 +5,8 @@ public class HouseSpawn : MonoBehaviour
 {
     public GameObject house;
 
-    void Start()
+    public void Spawn()
     {
-        StartCoroutine("SpawnHouse");
-    }
-
-    IEnumerator SpawnHouse()
-    {
-        yield return new WaitForSeconds(50.2f);
-
         Instantiate(house, transform);
     }
 }

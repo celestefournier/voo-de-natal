@@ -8,15 +8,10 @@ public class TreeSpawn : MonoBehaviour
     public float spawnTime;
     public int initialTrees;
 
-    GameController gameController;
-    IEnumerator instantiateController;
-
     public void Start()
     {
-        gameController = GameObject.Find("Game Controller").GetComponent<GameController>();
         InitialSpawn();
-        instantiateController = SpawnLoop();
-        StartCoroutine(instantiateController);
+        StartCoroutine("SpawnLoop");
     }
 
     void InitialSpawn()
@@ -41,12 +36,7 @@ public class TreeSpawn : MonoBehaviour
                 tree.GetComponent<MoveToLeft>().speed = speed;
             }
 
-            yield return new WaitForSeconds(spawnTime / gameController.cameraVelocity);
+            yield return new WaitForSeconds(spawnTime);
         }
-    }
-
-    public void Stop()
-    {
-        StopCoroutine(instantiateController);
     }
 }
