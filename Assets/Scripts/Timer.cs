@@ -33,11 +33,6 @@ public class Timer : MonoBehaviour
             time--;
             clock.text = time.ToString();
             onChangeTime.Invoke(time);
-
-            if (time == 0)
-            {
-                sceneManager.Finish();
-            }
         }
     }
 }

@@ -8,6 +8,8 @@ public class TreeSpawn : MonoBehaviour
     public float spawnTime;
     public int initialTrees;
 
+    public BackgroundController bgController;
+
     public void Start()
     {
         InitialSpawn();
@@ -36,7 +38,7 @@ public class TreeSpawn : MonoBehaviour
                 tree.GetComponent<MoveToLeft>().speed = speed;
             }
 
-            yield return new WaitForSeconds(spawnTime);
+            yield return new WaitForSeconds(spawnTime / bgController.speed);
         }
     }
 }

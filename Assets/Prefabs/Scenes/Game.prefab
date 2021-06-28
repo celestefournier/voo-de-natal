@@ -527,6 +527,8 @@ MonoBehaviour:
   timer: {fileID: 2746299978371343653}
   player: {fileID: 1306849605747571936}
   house: {fileID: 1306849605043824042}
+  score: {fileID: 3210828966626479632}
+  gameInterface: {fileID: 8987031639971118076}
 --- !u!1 &1890194951113063551
 GameObject:
   m_ObjectHideFlags: 0

@@ -473,6 +473,7 @@ MonoBehaviour:
   speed: 7
   spawnTime: 0.25
   initialTrees: 10
+  bgController: {fileID: 2010923963323235765}
 --- !u!1 &5509766425899912994
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +603,7 @@ MonoBehaviour:
   speed: 3.5
   spawnTime: 0.4
   initialTrees: 10
+  bgController: {fileID: 2010923963323235765}
 --- !u!1 &5509766426475641990
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,3 +748,4 @@ MonoBehaviour:
   speed: 1.75
   spawnTime: 0.5
   initialTrees: 15
+  bgController: {fileID: 2010923963323235765}

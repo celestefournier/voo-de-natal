@@ -1127,11 +1127,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afdbc39c7a8eee743a9a6b8f155dba3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreManager: {fileID: 0}
   candy: {fileID: 146647016559707873}
   bell: {fileID: 146647017047516354}
   ornament: {fileID: 146647016603034617}
   star: {fileID: 146647016925686849}
+  sceneManager: {fileID: 0}
 --- !u!114 &146647017297575945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1448,9 +1448,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: Restart
+      - m_Target: {fileID: 146647017297575946}
+        m_TargetAssemblyTypeName: FinishController, Assembly-CSharp
+        m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
