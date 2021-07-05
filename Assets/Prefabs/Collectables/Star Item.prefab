@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3931568513547260454}
   - component: {fileID: 506618607963612143}
-  - component: {fileID: -8715328774428346547}
   - component: {fileID: 8069670000883057416}
   - component: {fileID: 7946813141937869927}
+  - component: {fileID: -8715328774428346547}
+  - component: {fileID: -2418348427198046035}
   m_Layer: 0
   m_Name: Star Item
   m_TagString: Item
@@ -85,19 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-8715328774428346547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7124178149116260304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63ef219be9d204a42a1c2fd855121d8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!50 &8069670000883057416
 Rigidbody2D:
   serializedVersion: 4
@@ -145,3 +133,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.78, y: 0.76}
   m_EdgeRadius: 0
+--- !u!114 &-8715328774428346547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7124178149116260304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ef219be9d204a42a1c2fd855121d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+--- !u!114 &-2418348427198046035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7124178149116260304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30189f0cea22fb7448ef464e4b4c559c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
