@@ -43,7 +43,6 @@ public class Player : MonoBehaviour
         if (other.tag == "Enemy")
         {
             Instantiate(collisionEffect, other.transform.position, Quaternion.identity);
-            Destroy(other.gameObject);
             sceneManager.Lose(
                 timer.time,
                 collectablesManager.candyScore,
