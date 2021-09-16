@@ -1,7 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class Bounce : MonoBehaviour
+public class MoveUpDown : MonoBehaviour
 {
     float speed = 1;
 
